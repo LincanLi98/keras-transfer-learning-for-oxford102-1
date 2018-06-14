@@ -94,16 +94,16 @@ def predict(path):
         if not args.store_activations:
             # Warm up the model
             if n == 0:
-                print('Warming up the model')
-                start = time.clock()
+                print('Warming up the model')#print execution information
+                start = time.clock()#record start time
                 model.predict(np.array([inputs[0]]))
-                end = time.clock()
-                print('Warming up took {} s'.format(end - start))
+                end = time.clock()#record end time
+                print('Warming up took {} s'.format(end - start))#print execution time
 
             # Make predictions
-            start = time.clock()
+            start = time.clock()#record start time
             out = model.predict(np.array(inputs))#predict!
-            end = time.clock()
+            end = time.clock()#record end time
             predictions[n_from:n_to] = np.argmax(out, axis=1)#return the index of the maximum value of specified dimention
             print('Prediction on batch {} took: {}'.format(n, end - start))#print execution time
 
@@ -144,6 +144,6 @@ if __name__ == '__main__':
 
     predict(args.path)#we must input a path of directory including pictures
 
-    if args.execution_time:#print execution_time
-        toc = time.clock()#~
-        print('Time: %s' % (toc - tic))#~
+    if args.execution_time:#
+        toc = time.clock()#record current time
+        print('Time: %s' % (toc - tic))#print execution time
