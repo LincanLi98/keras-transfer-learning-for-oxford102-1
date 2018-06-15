@@ -1,6 +1,7 @@
 import os
+import os.path
+from os.path import join
 
-a = "g:\keras-transfer-learning-for-oxford102\data\jpg\image_00002.jpg".split(os.sep)[-2]
-a = ["a", "b"]
-b = [4, 5]
-print(dict(zip(a, b)))
+x = sorted(o for o in os.listdir("g:/") if os.path.isdir("g:/"+o))
+
+print(x)

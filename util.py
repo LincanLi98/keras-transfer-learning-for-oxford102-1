@@ -136,8 +136,8 @@ def get_class_weight(d):
 
 def set_classes_from_train_dir():
     """Returns classes based on directories in train directory"""
-    d = config.train_dir
-    config.classes = sorted([o for o in os.listdir(d) if os.path.isdir(os.path.join(d, o))])
+    d = config.train_dir#
+    config.classes = sorted([o for o in os.listdir(d) if os.path.isdir(os.path.join(d, o))])#return a list which sort an iterable object
 
 
 def override_keras_directory_iterator_next():
@@ -161,7 +161,7 @@ def override_keras_directory_iterator_next():
 
 def get_classes_in_keras_format():
     if config.classes:
-        return dict(zip(config.classes, range(len(config.classes))))#return a dictory
+        return dict(zip(config.c lasses, range(len(config.classes))))#return a dictory
     return None
 
 
@@ -204,7 +204,7 @@ def lock():
         exit('Previous process is not yet finished.')
 
     with open(config.lock_file, 'w') as lock_file:
-        lock_file.write(str(os.getpid()))
+        lock_file.write(str(os.getpid()))#get the number of current process
 
 
 def unlock():

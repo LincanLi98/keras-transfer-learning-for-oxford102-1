@@ -1,7 +1,7 @@
 from os.path import join as join_path
 import os
 
-abspath = os.path.dirname(os.path.abspath(__file__))#return a path of directory which contais this file
+abspath = os.path.dirname(os.path.abspath(__file__))#return a path of directory which contais this file(config.py)
 
 lock_file = os.path.join(abspath, 'lock')
 

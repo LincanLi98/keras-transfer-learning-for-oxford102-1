@@ -25,10 +25,10 @@ def parse_args():
 
 
 def init():
-    util.lock()
-    util.set_img_format()
+    util.lock()#detect previous precess has completed or not
+    util.set_img_format()#set image format: channels first or channels last
     util.override_keras_directory_iterator_next()
-    util.set_classes_from_train_dir()
+    util.set_classes_from_train_dir()#data_dir: data/sorted/train/
     util.set_samples_info()
 
     if util.get_keras_backend_name() != 'theano':

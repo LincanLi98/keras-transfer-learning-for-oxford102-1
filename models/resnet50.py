@@ -17,7 +17,7 @@ class ResNet50(BaseModel):#BaseModel is ResNet50's father
             self.freeze_layers_number = 80
 
     def _create(self):
-        base_model = KerasResNet50(include_top=False, input_tensor=self.get_input_tensor())#define base_model
+        base_model = KerasResNet50(include_top=False, input_tensor=self.get_input_tensor())#create base_model
         self.make_net_layers_non_trainable(base_model)#make net layers non trainable
 
         x = base_model.output
